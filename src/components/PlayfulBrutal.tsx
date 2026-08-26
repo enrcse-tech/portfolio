@@ -532,7 +532,11 @@ export function CharacterReveal() {
     text.innerHTML = "";
     split.forEach((char: string) => {
       const span = document.createElement("span");
-      span.innerText = char;
+      if (char === " ") {
+        span.innerHTML = "&nbsp;";
+      } else {
+        span.innerText = char;
+      }
       span.className = "char opacity-20 inline-block text-black";
       text.appendChild(span);
     });
