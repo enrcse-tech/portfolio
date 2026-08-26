@@ -528,17 +528,29 @@ export function CharacterReveal() {
     if (!text) return;
 
     const content = text.innerText;
-    const split = content.split("");
+    const words = content.split(" ");
     text.innerHTML = "";
-    split.forEach((char: string) => {
-      const span = document.createElement("span");
-      if (char === " ") {
-        span.innerHTML = "&nbsp;";
-      } else {
-        span.innerText = char;
+    
+    words.forEach((word, wordIndex) => {
+      const wordSpan = document.createElement("span");
+      wordSpan.className = "inline-block whitespace-nowrap";
+
+      const chars = word.split("");
+      chars.forEach((char) => {
+        const charSpan = document.createElement("span");
+        charSpan.innerText = char;
+        charSpan.className = "char opacity-20 inline-block text-black";
+        wordSpan.appendChild(charSpan);
+      });
+
+      text.appendChild(wordSpan);
+
+      if (wordIndex < words.length - 1) {
+        const spaceSpan = document.createElement("span");
+        spaceSpan.innerHTML = "&nbsp;";
+        spaceSpan.className = "inline-block";
+        text.appendChild(spaceSpan);
       }
-      span.className = "char opacity-20 inline-block text-black";
-      text.appendChild(span);
     });
 
     gsap.to(".char", {
