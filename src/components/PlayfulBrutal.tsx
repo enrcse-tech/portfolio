@@ -546,10 +546,7 @@ export function CharacterReveal() {
       text.appendChild(wordSpan);
 
       if (wordIndex < words.length - 1) {
-        const spaceSpan = document.createElement("span");
-        spaceSpan.innerHTML = "&nbsp;";
-        spaceSpan.className = "inline-block";
-        text.appendChild(spaceSpan);
+        text.appendChild(document.createTextNode(" "));
       }
     });
 
