@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight, Star, Hexagon, Zap, Box, Smile } from "lucide-react";
 import { cn } from "../lib/utils";
 import { motion } from "framer-motion";
+import Lanyard from "./Lanyard";
 
 // --- CONFIG ---
 gsap.registerPlugin(ScrollTrigger);
@@ -232,42 +233,65 @@ export function Hero({ onScrollToWork }: { onScrollToWork?: () => void }) {
   }, []);
 
   return (
-    <section ref={container} className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#E0E0E0] pt-24 pb-16">
+    <section ref={container} className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#E0E0E0] pt-32 pb-16 px-6 md:px-12">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
-      <div ref={shapeRef} className="absolute right-[10%] top-[15%] hidden md:block">
-        <Star size={180} strokeWidth={1} className="fill-[#CCFF00] text-black drop-shadow-[8px_8px_0px_#000]" />
+      <div className="container mx-auto max-w-6xl z-10 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 w-full">
+        {/* Left Column: Name & CTA */}
+        <div ref={textRef} className="flex flex-col items-center lg:items-start text-center lg:text-left select-none">
+          <div className="overflow-hidden">
+            <h1 className="hero-text text-[10vw] lg:text-[7vw] font-black leading-[0.85] tracking-tighter text-[#1A1A1A] uppercase">
+              EPRIN
+            </h1>
+          </div>
+          <div className="overflow-hidden">
+            <h1 className="hero-text text-[10vw] lg:text-[7vw] font-black leading-[0.85] tracking-tighter text-[#FF4D00] stroke-black uppercase" style={{ WebkitTextStroke: "2px black", color: "#FF4D00" }}>
+              NOBLE
+            </h1>
+          </div>
+          <div className="overflow-hidden">
+            <h1 className="hero-text text-[10vw] lg:text-[7vw] font-black leading-[0.85] tracking-tighter text-[#1A1A1A] uppercase">
+              RISHO
+            </h1>
+          </div>
+          
+          <p className="mt-6 text-md md:text-lg font-bold uppercase text-black max-w-md tracking-wider">
+            Full-Stack Developer & Cloud Architect based in India.
+          </p>
+
+          <div className="mt-8 flex gap-4">
+            <MagneticBtn onClick={onScrollToWork} className="bg-[#0047FF] text-white">View Projects</MagneticBtn>
+            <a href="mailto:enr.cse@gmail.com">
+              <MagneticBtn className="bg-white hover:bg-[#CCFF00] text-black">Say hi <ArrowUpRight className="ml-2" /></MagneticBtn>
+            </a>
+          </div>
+        </div>
+
+        {/* Right Column: Interactive Lanyard */}
+        <div className="w-full h-[55vh] lg:h-[70vh] relative flex items-center justify-center border-4 border-black bg-white shadow-[12px_12px_0px_0px_#000] hover:shadow-none hover:translate-x-3 hover:translate-y-3 transition-all rounded-2xl overflow-hidden">
+          <div className="absolute top-4 left-4 z-20 flex gap-2">
+            <div className="h-4 w-4 rounded-full bg-[#FF4D00] border-2 border-black" />
+            <div className="h-4 w-4 rounded-full bg-[#CCFF00] border-2 border-black" />
+            <div className="h-4 w-4 rounded-full bg-[#0047FF] border-2 border-black" />
+          </div>
+          <div className="absolute top-4 right-4 z-20 text-[10px] font-black uppercase bg-black text-white px-2 py-0.5 rounded border border-black">
+            Drag to Swing
+          </div>
+          <Lanyard
+            position={[0, 0, 20]}
+            gravity={[0, -40, 0]}
+            frontImage="/CV.png"
+            backImage="/CV.png"
+            imageFit="cover"
+            lanyardWidth={1.5}
+          />
+        </div>
       </div>
 
-      <div ref={textRef} className="relative z-10 text-center select-none">
-        <div className="overflow-hidden">
-          <h1 className="hero-text text-[14vw] font-black leading-[0.8] tracking-tighter text-[#1A1A1A]">
-            EPRIN
-          </h1>
-        </div>
-        <div className="overflow-hidden">
-          <h1 className="hero-text text-[14vw] font-black leading-[0.8] tracking-tighter text-[#FF4D00] stroke-black" style={{ WebkitTextStroke: "4px black", color: "#FF4D00" }}>
-            NOBLE
-          </h1>
-        </div>
-        <div className="overflow-hidden">
-          <h1 className="hero-text text-[14vw] font-black leading-[0.8] tracking-tighter text-[#1A1A1A]">
-            RISHO
-          </h1>
-        </div>
-      </div>
-
-      <div className="mt-12 flex gap-4">
-        <MagneticBtn onClick={onScrollToWork} className="bg-[#0047FF] text-white">View Projects</MagneticBtn>
-        <a href="mailto:enr.cse@gmail.com">
-          <MagneticBtn className="bg-white hover:bg-[#CCFF00] text-black">Say hi <ArrowUpRight className="ml-2" /></MagneticBtn>
-        </a>
-      </div>
-
-      <div className="absolute bottom-12 left-12 hidden md:block">
-        <div className="w-32 animate-spin-slow text-black fill-black">
-          <svg viewBox="0 0 100 100" width="100" height="100">
+      <div className="absolute bottom-6 left-6 hidden md:block z-20">
+        <div className="w-24 animate-spin-slow text-black fill-black">
+          <svg viewBox="0 0 100 100" width="80" height="80">
             <defs>
               <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
             </defs>
