@@ -171,7 +171,7 @@ export function Navbar({ onNavigate }: { onNavigate?: (section: string) => void 
       <div className="flex items-center gap-4 md:gap-8 rounded-full border-4 border-black bg-white px-5 md:px-8 py-3 md:py-4 shadow-[4px_4px_0px_0px_#000]">
         <Hexagon className="fill-black text-black" size={32} />
         <div className="flex gap-4 md:gap-6 text-xs md:text-sm font-bold uppercase tracking-widest text-black">
-          {['Work', 'Toolkit', 'Pricing'].map(item => (
+          {['Work', 'Toolkit', 'Credentials'].map(item => (
             <button 
               key={item} 
               onClick={() => onNavigate?.(item)} 
@@ -485,32 +485,55 @@ export function FloatingStickers() {
   );
 }
 
-export function Pricing({ onScrollToPricing }: { onScrollToPricing?: React.RefObject<HTMLDivElement> }) {
+export function Credentials({ onScrollToCredentials }: { onScrollToCredentials?: React.RefObject<HTMLDivElement> }) {
   return (
-    <section ref={onScrollToPricing} className="bg-black py-48">
+    <section ref={onScrollToCredentials} className="bg-black py-48">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { plan: "Static Site", price: "$499", color: "bg-white" },
-            { plan: "Full-Stack App", price: "$1,499", color: "bg-[#FF4D00]" },
-            { plan: "Bespoke System", price: "Varies", color: "bg-[#CCFF00]" }
-          ].map((p, i) => (
-            <div key={i} className={cn("relative border-4 border-black p-12 flex flex-col justify-between shadow-[16px_16px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none transition-all hover:translate-x-4 hover:translate-y-4", p.color)}>
+            { 
+              title: "LPU B.Tech", 
+              subtitle: "CSE Student", 
+              color: "bg-white", 
+              bullets: ["CGPA: 8.79 / 10", "Batch: 2025 - 2029", "Focus on Cloud, OOP & AI"],
+              btnText: "LPU Website",
+              btnLink: "https://www.lpu.in"
+            },
+            { 
+              title: "AWS Cloud", 
+              subtitle: "Academy Certs", 
+              color: "bg-[#FF4D00]", 
+              bullets: ["Cloud Foundations", "Cloud Architecting", "VPC & Serverless Setup"],
+              btnText: "AWS Academy",
+              btnLink: "https://aws.amazon.com/training/"
+            },
+            { 
+              title: "CCNA Network", 
+              subtitle: "Cisco Academy", 
+              color: "bg-[#CCFF00]", 
+              bullets: ["Routing & Switching", "IP Subnetting & Topologies", "Network Security"],
+              btnText: "Cisco Networking",
+              btnLink: "https://www.netacad.com"
+            }
+          ].map((c, i) => (
+            <div key={i} className={cn("relative border-4 border-black p-12 flex flex-col justify-between shadow-[16px_16px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none transition-all hover:translate-x-4 hover:translate-y-4", c.color)}>
               <div>
-                <h3 className="text-4xl font-black uppercase mb-2 text-black">{p.plan}</h3>
+                <h3 className="text-4xl font-black uppercase mb-2 text-black">{c.title}</h3>
                 <div className="h-2 w-16 bg-black mb-8" />
-                <p className="text-6xl font-black tracking-tighter text-black">{p.price}</p>
+                <p className="text-2xl font-black tracking-tighter text-black uppercase">{c.subtitle}</p>
               </div>
-              <ul className="mt-12 mb-12 space-y-4 font-bold uppercase text-sm text-black">
-                <li>• Design & Strategy</li>
-                <li>• Custom Integration</li>
-                <li>• Deploy & Host Setup</li>
+              <ul className="mt-8 mb-8 space-y-4 font-bold uppercase text-xs md:text-sm text-black">
+                {c.bullets.map((b, idx) => (
+                  <li key={idx}>• {b}</li>
+                ))}
               </ul>
               <a 
-                href="mailto:enr.cse@gmail.com"
+                href={c.btnLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full border-4 border-black bg-white py-4 text-center text-xl font-black uppercase shadow-[8px_8px_0px_0px_#000] hover:bg-black hover:text-white transition-colors text-black hover:text-white cursor-pointer block"
               >
-                Hire Me
+                {c.btnText}
               </a>
             </div>
           ))}

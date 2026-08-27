@@ -8,7 +8,7 @@ import {
   TickerTape,
   SplitInteractive,
   FloatingStickers,
-  Pricing,
+  Credentials,
   CharacterReveal,
   TiltRecap,
   Newsletter,
@@ -18,14 +18,14 @@ import {
 export default function App() {
   const workRef = useRef<HTMLDivElement>(null);
   const agencyRef = useRef<HTMLDivElement>(null);
-  const pricingRef = useRef<HTMLDivElement>(null);
+  const credentialsRef = useRef<HTMLDivElement>(null);
   const talkRef = useRef<HTMLDivElement>(null);
 
   const handleNavigate = useCallback((section: string) => {
     const refMap: Record<string, React.RefObject<HTMLDivElement>> = {
       Work: workRef,
       Agency: agencyRef,
-      Pricing: pricingRef,
+      Credentials: credentialsRef,
       Talk: talkRef,
     };
 
@@ -51,7 +51,7 @@ export default function App() {
       <TickerTape />
       <SplitInteractive onScrollToWhyUs={agencyRef} />
       <FloatingStickers />
-      <Pricing onScrollToPricing={pricingRef} />
+      <Credentials onScrollToCredentials={credentialsRef} />
       <CharacterReveal />
       <TiltRecap />
       <div ref={talkRef}>
