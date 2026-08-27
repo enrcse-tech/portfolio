@@ -693,7 +693,7 @@ export function Footer() {
             <a href="https://www.linkedin.com/in/eprin-noble-risho-439b78379" target="_blank" rel="noopener noreferrer" className="border-2 border-black bg-white px-4 py-2 font-bold uppercase shadow-[4px_4px_0px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all text-black">
               LinkedIn
             </a>
-            <a href="https://instagram.com/enr_0901" target="_blank" rel="noopener noreferrer" className="border-2 border-black bg-white px-4 py-2 font-bold uppercase shadow-[4px_4px_0px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all text-black">
+            <a href="https://instagram.com/enr.0901" target="_blank" rel="noopener noreferrer" className="border-2 border-black bg-white px-4 py-2 font-bold uppercase shadow-[4px_4px_0px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all text-black">
               Instagram
             </a>
             <a href="https://wa.me/916374434361" target="_blank" rel="noopener noreferrer" className="border-2 border-black bg-white px-4 py-2 font-bold uppercase shadow-[4px_4px_0px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all text-black">
