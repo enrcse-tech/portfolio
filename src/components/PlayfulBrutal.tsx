@@ -260,6 +260,18 @@ export function Hero({ onScrollToWork }: { onScrollToWork?: () => void }) {
             Full-Stack Developer & Cloud Architect based in India.
           </p>
 
+          <div className="mt-6 flex flex-wrap gap-3 justify-center lg:justify-start">
+            <span className="border-2 border-black bg-white px-3 py-1.5 text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] text-black">
+              🚀 3+ Live Sites
+            </span>
+            <span className="border-2 border-black bg-[#CCFF00] px-3 py-1.5 text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] text-black">
+              ☁️ AWS Academy
+            </span>
+            <span className="border-2 border-black bg-[#FF4D00] px-3 py-1.5 text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] text-black">
+              💻 OOP & Logic
+            </span>
+          </div>
+
           <div className="mt-8 flex gap-4">
             <MagneticBtn onClick={onScrollToWork} className="bg-[#0047FF] text-white">View Projects</MagneticBtn>
             <a href="mailto:enr.cse@gmail.com">
