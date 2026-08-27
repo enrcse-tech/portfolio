@@ -686,12 +686,18 @@ export function Footer() {
         </div>
 
         <div className="mt-24 flex flex-col md:flex-row justify-between items-center md:items-end gap-8 border-t-4 border-black pt-8">
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <a href="https://github.com/enrcse-tech" target="_blank" rel="noopener noreferrer" className="border-2 border-black bg-white px-4 py-2 font-bold uppercase shadow-[4px_4px_0px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all text-black">
               GitHub
             </a>
             <a href="https://www.linkedin.com/in/eprin-noble-risho-439b78379" target="_blank" rel="noopener noreferrer" className="border-2 border-black bg-white px-4 py-2 font-bold uppercase shadow-[4px_4px_0px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all text-black">
               LinkedIn
+            </a>
+            <a href="https://instagram.com/enr_0901" target="_blank" rel="noopener noreferrer" className="border-2 border-black bg-white px-4 py-2 font-bold uppercase shadow-[4px_4px_0px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all text-black">
+              Instagram
+            </a>
+            <a href="https://wa.me/916374434361" target="_blank" rel="noopener noreferrer" className="border-2 border-black bg-white px-4 py-2 font-bold uppercase shadow-[4px_4px_0px_0px_#000] hover:translate-y-1 hover:shadow-none transition-all text-black">
+              WhatsApp
             </a>
           </div>
           <p className="font-bold uppercase text-black">© 2026 Eprin Noble Risho.</p>
