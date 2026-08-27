@@ -5,6 +5,7 @@ import { ArrowUpRight, Star, Hexagon, Zap, Box, Smile } from "lucide-react";
 import { cn } from "../lib/utils";
 import { motion } from "framer-motion";
 import Lanyard from "./Lanyard";
+import TextLoop from "./TextLoop";
 
 // --- CONFIG ---
 gsap.registerPlugin(ScrollTrigger);
@@ -254,6 +255,28 @@ export function Hero({ onScrollToWork }: { onScrollToWork?: () => void }) {
             <h1 className="hero-text text-[10vw] lg:text-[7vw] font-black leading-[0.85] tracking-tighter text-[#1A1A1A] uppercase">
               RISHO
             </h1>
+          </div>
+
+          {/* Mini TextLoop Ribbon */}
+          <div className="w-full max-w-[320px] md:max-w-md h-24 my-2 overflow-hidden flex items-center justify-center lg:justify-start">
+            <TextLoop
+              text="C++ ✦ Python ✦ AWS ✦ React ✦ TypeScript ✦ Full-Stack"
+              shape="wave"
+              speed={60}
+              direction="forward"
+              separator="✦"
+              curviness={50}
+              fontSize={18}
+              fontWeight={800}
+              letterSpacing={1}
+              uppercase
+              color="#ffffff"
+              ribbon
+              ribbonColor="#5227FF"
+              ribbonWidth={42}
+              pauseOnHover
+              className="w-full"
+            />
           </div>
           
           <p className="mt-6 text-md md:text-lg font-bold uppercase text-black max-w-md tracking-wider">
