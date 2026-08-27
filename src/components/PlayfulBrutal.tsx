@@ -269,7 +269,7 @@ export function Hero({ onScrollToWork }: { onScrollToWork?: () => void }) {
         </div>
 
         {/* Right Column: Interactive Lanyard */}
-        <div className="w-full h-[55vh] lg:h-[70vh] relative flex items-center justify-center border-4 border-black bg-white shadow-[12px_12px_0px_0px_#000] hover:shadow-none hover:translate-x-3 hover:translate-y-3 transition-all rounded-2xl overflow-hidden">
+        <div className="w-full h-[40vh] md:h-[50vh] lg:h-[70vh] relative flex items-center justify-center border-4 border-black bg-white shadow-[12px_12px_0px_0px_#000] hover:shadow-none hover:translate-x-3 hover:translate-y-3 transition-all rounded-2xl overflow-hidden">
           <div className="absolute top-4 left-4 z-20 flex gap-2">
             <div className="h-4 w-4 rounded-full bg-[#FF4D00] border-2 border-black" />
             <div className="h-4 w-4 rounded-full bg-[#CCFF00] border-2 border-black" />

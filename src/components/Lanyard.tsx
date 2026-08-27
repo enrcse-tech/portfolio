@@ -49,10 +49,17 @@ export default function Lanyard({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const responsivePosition = useMemo<[number, number, number]>(() => {
+    if (isMobile) {
+      return [position[0], position[1], position[2] * 1.5]; // Zoom out on mobile
+    }
+    return position;
+  }, [position, isMobile]);
+
   return (
     <div className="lanyard-wrapper">
       <Canvas
-        camera={{ position: position, fov: fov }}
+        camera={{ position: responsivePosition, fov: fov }}
         dpr={[1, isMobile ? 1.5 : 2]}
         gl={{ alpha: transparent }}
         onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
