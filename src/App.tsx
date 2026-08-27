@@ -14,6 +14,7 @@ import {
   Newsletter,
   Footer
 } from './components/PlayfulBrutal';
+import TextLoop from './components/TextLoop';
 
 export default function App() {
   const workRef = useRef<HTMLDivElement>(null);
@@ -48,6 +49,25 @@ export default function App() {
       <GridSection onScrollToWork={workRef} />
       <Services />
       <BentoGrid />
+      <div className="py-6 bg-black border-b-8 border-black overflow-hidden relative">
+        <TextLoop
+          text="EPRIN NOBLE RISHO ✦ DEVELOPER ✦ ARCHITECT"
+          shape="wave"
+          speed={90}
+          direction="forward"
+          separator="✦"
+          curviness={90}
+          fontSize={46}
+          fontWeight={800}
+          letterSpacing={2}
+          uppercase
+          color="#ffffff"
+          ribbon
+          ribbonColor="#5227FF"
+          ribbonWidth={86}
+          pauseOnHover
+        />
+      </div>
       <TickerTape />
       <SplitInteractive onScrollToWhyUs={agencyRef} />
       <FloatingStickers />
