@@ -299,19 +299,19 @@ export function GridSection({ onScrollToWork }: { onScrollToWork?: React.RefObje
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
           <BrutalCard
             title="Wings Tuition"
-            img="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80"
+            img="/Screenshot 2026-08-27 103145.png"
             color="bg-[#FF4D00]"
             url="https://wingstuition.com"
           />
           <BrutalCard
             title="Wings Intl School"
-            img="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80"
+            img="/Screenshot 2026-08-27 103212.png"
             color="bg-[#CCFF00]"
             url="https://wingsinternationalschool.com"
           />
           <BrutalCard
             title="French Bakers"
-            img="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80"
+            img="/Screenshot 2026-08-27 103238.png"
             color="bg-[#0047FF]"
             url="https://thefrenchbakers.in"
           />
