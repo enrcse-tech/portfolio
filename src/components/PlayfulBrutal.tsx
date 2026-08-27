@@ -323,19 +323,19 @@ export function GridSection({ onScrollToWork }: { onScrollToWork?: React.RefObje
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
           <BrutalCard
             title="Wings Tuition"
-            img="/Screenshot 2026-08-27 103145.png"
+            img="/wings-tuition.png"
             color="bg-[#FF4D00]"
             url="https://wingstuition.com"
           />
           <BrutalCard
             title="Wings Intl School"
-            img="/Screenshot 2026-08-27 103212.png"
+            img="/wings-school.png"
             color="bg-[#CCFF00]"
             url="https://wingsinternationalschool.com"
           />
           <BrutalCard
             title="French Bakers"
-            img="/Screenshot 2026-08-27 103238.png"
+            img="/french-bakers.png"
             color="bg-[#0047FF]"
             url="https://thefrenchbakers.in"
           />
