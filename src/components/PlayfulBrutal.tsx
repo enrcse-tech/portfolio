@@ -495,7 +495,7 @@ export function Credentials({ onScrollToCredentials }: { onScrollToCredentials?:
               title: "LPU B.Tech", 
               subtitle: "CSE Student", 
               color: "bg-white", 
-              bullets: ["CGPA: 8.79 / 10", "Batch: 2025 - 2029", "Focus on Cloud, OOP & AI"],
+              bullets: ["CGPA: 7.2 / 10", "Batch: 2025 - 2029", "Focus on Cloud, OOP & AI"],
               btnText: "LPU Website",
               btnLink: "https://www.lpu.in"
             },
