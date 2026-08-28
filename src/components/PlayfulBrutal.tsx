@@ -520,57 +520,35 @@ export function BentoGrid({ onScrollToToolkit }: { onScrollToToolkit?: React.Ref
             The <br /> <span className="text-[#0047FF]">Toolkit</span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[960px]">
-          <div className="bento-item md:col-span-2 md:row-span-2 border-4 border-black bg-[#CCFF00] p-8 md:p-10 flex flex-col justify-between shadow-[12px_12px_0px_0px_#000]">
+        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[750px]">
+          <div className="bento-item md:col-span-2 md:row-span-2 border-4 border-black bg-[#CCFF00] p-8 flex flex-col justify-between shadow-[12px_12px_0px_0px_#000]">
             <div>
-              <h3 className="text-6xl font-black uppercase text-black mb-6">Visual <br /> Engine</h3>
+              <h3 className="text-5xl md:text-6xl font-black uppercase text-black mb-4">Visual <br /> Engine</h3>
               <div className="flex flex-col gap-4 max-w-md">
-                <p className="text-lg font-bold text-black border-l-4 border-black pl-4">
+                <p className="text-base md:text-lg font-bold text-black border-l-4 border-black pl-4">
                   Building memory-efficient desktop simulations, mathematical modeling solvers, and custom automation scripts.
                 </p>
-                <div className="flex flex-wrap gap-2 mt-2">
+                <div className="flex flex-wrap gap-2 mt-1">
                   <span className="bg-black text-white text-xs font-black uppercase px-2.5 py-1">OpenGL / Graphics</span>
                   <span className="bg-black text-white text-xs font-black uppercase px-2.5 py-1">OOP Architecture</span>
                   <span className="bg-black text-white text-xs font-black uppercase px-2.5 py-1">Algorithmic Math</span>
                 </div>
-                <div className="flex flex-col gap-2 mt-4 text-xs md:text-sm font-bold text-black border-t-2 border-black pt-4">
-                  <div className="flex items-center gap-2">
-                    <span className="h-2 w-2 bg-black rounded-full" />
-                    <span>Memory Optimization & Performance Profiling</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="h-2 w-2 bg-black rounded-full" />
-                    <span>Automated Automation & Custom Scripting</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="h-2 w-2 bg-black rounded-full" />
-                    <span>Real-time Rendering & Shading Engines</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="h-2 w-2 bg-black rounded-full" />
-                    <span>Socket Programming & Network Interfaces</span>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-4 mt-6 border-t-2 border-black pt-4">
-                  <h4 className="text-xl font-black uppercase text-black">Core Engine Specs:</h4>
-                  <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 mt-4 border-t-2 border-black pt-4">
+                  <h4 className="text-lg font-black uppercase text-black">Core Engine Specs:</h4>
+                  <div className="flex flex-col gap-2.5">
                     <div className="border-2 border-black bg-white p-3 shadow-[4px_4px_0px_0px_#000]">
                       <p className="text-xs font-black uppercase text-[#FF4D00]">01 / Simulation Engines</p>
-                      <p className="text-xs font-bold text-black mt-1">Mathematical solvers and gravity simulation engines built using custom C++ matrices.</p>
+                      <p className="text-xs font-bold text-black mt-0.5">Mathematical solvers and gravity simulation engines built using custom C++ matrices.</p>
                     </div>
                     <div className="border-2 border-black bg-white p-3 shadow-[4px_4px_0px_0px_#000]">
                       <p className="text-xs font-black uppercase text-[#0047FF]">02 / System Automation</p>
-                      <p className="text-xs font-bold text-black mt-1">Cross-platform OS level scripts and network automation sockets programmed in Python.</p>
-                    </div>
-                    <div className="border-2 border-black bg-white p-3 shadow-[4px_4px_0px_0px_#000]">
-                      <p className="text-xs font-black uppercase text-black">03 / Compiler Configs</p>
-                      <p className="text-xs font-bold text-black mt-1">Custom build systems, makefile generation, and optimized linking setups.</p>
+                      <p className="text-xs font-bold text-black mt-0.5">Cross-platform OS level scripts and network automation sockets programmed in Python.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <p className="text-2xl font-bold uppercase italic text-black">C++ & Python Specialist</p>
+            <p className="text-xl md:text-2xl font-bold uppercase italic text-black mt-4">C++ & Python Specialist</p>
           </div>
           <div className="bento-item md:col-span-1 border-4 border-black bg-[#FF4D00] p-8 shadow-[12px_12px_0px_0px_#000]">
             <div className="h-full flex items-center justify-center">
