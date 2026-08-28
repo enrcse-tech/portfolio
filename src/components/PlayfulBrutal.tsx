@@ -447,6 +447,23 @@ export function BentoGrid({ onScrollToToolkit }: { onScrollToToolkit?: React.Ref
                     <span>Socket Programming & Network Interfaces</span>
                   </div>
                 </div>
+                <div className="flex flex-col gap-4 mt-6 border-t-2 border-black pt-4">
+                  <h4 className="text-xl font-black uppercase text-black">Core Engine Specs:</h4>
+                  <div className="flex flex-col gap-3">
+                    <div className="border-2 border-black bg-white p-3 shadow-[4px_4px_0px_0px_#000]">
+                      <p className="text-xs font-black uppercase text-[#FF4D00]">01 / Simulation Engines</p>
+                      <p className="text-xs font-bold text-black mt-1">Mathematical solvers and gravity simulation engines built using custom C++ matrices.</p>
+                    </div>
+                    <div className="border-2 border-black bg-white p-3 shadow-[4px_4px_0px_0px_#000]">
+                      <p className="text-xs font-black uppercase text-[#0047FF]">02 / System Automation</p>
+                      <p className="text-xs font-bold text-black mt-1">Cross-platform OS level scripts and network automation sockets programmed in Python.</p>
+                    </div>
+                    <div className="border-2 border-black bg-white p-3 shadow-[4px_4px_0px_0px_#000]">
+                      <p className="text-xs font-black uppercase text-black">03 / Compiler Configs</p>
+                      <p className="text-xs font-bold text-black mt-1">Custom build systems, makefile generation, and optimized linking setups.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <p className="text-2xl font-bold uppercase italic text-black">C++ & Python Specialist</p>
