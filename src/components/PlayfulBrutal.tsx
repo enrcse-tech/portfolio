@@ -416,8 +416,8 @@ export function BentoGrid({ onScrollToToolkit }: { onScrollToToolkit?: React.Ref
             The <br /> <span className="text-[#0047FF]">Toolkit</span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[800px]">
-          <div className="bento-item md:col-span-2 md:row-span-2 border-4 border-black bg-[#CCFF00] p-12 flex flex-col justify-between shadow-[12px_12px_0px_0px_#000]">
+        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[960px]">
+          <div className="bento-item md:col-span-2 md:row-span-2 border-4 border-black bg-[#CCFF00] p-8 md:p-10 flex flex-col justify-between shadow-[12px_12px_0px_0px_#000]">
             <div>
               <h3 className="text-6xl font-black uppercase text-black mb-6">Visual <br /> Engine</h3>
               <div className="flex flex-col gap-4 max-w-md">
