@@ -418,7 +418,19 @@ export function BentoGrid({ onScrollToToolkit }: { onScrollToToolkit?: React.Ref
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[800px]">
           <div className="bento-item md:col-span-2 md:row-span-2 border-4 border-black bg-[#CCFF00] p-12 flex flex-col justify-between shadow-[12px_12px_0px_0px_#000]">
-            <h3 className="text-6xl font-black uppercase text-black">Visual <br /> Engine</h3>
+            <div>
+              <h3 className="text-6xl font-black uppercase text-black mb-6">Visual <br /> Engine</h3>
+              <div className="flex flex-col gap-4 max-w-md">
+                <p className="text-lg font-bold text-black border-l-4 border-black pl-4">
+                  Building memory-efficient desktop simulations, mathematical modeling solvers, and custom automation scripts.
+                </p>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  <span className="bg-black text-white text-xs font-black uppercase px-2.5 py-1">OpenGL / Graphics</span>
+                  <span className="bg-black text-white text-xs font-black uppercase px-2.5 py-1">OOP Architecture</span>
+                  <span className="bg-black text-white text-xs font-black uppercase px-2.5 py-1">Algorithmic Math</span>
+                </div>
+              </div>
+            </div>
             <p className="text-2xl font-bold uppercase italic text-black">C++ & Python Specialist</p>
           </div>
           <div className="bento-item md:col-span-1 border-4 border-black bg-[#FF4D00] p-8 shadow-[12px_12px_0px_0px_#000]">
