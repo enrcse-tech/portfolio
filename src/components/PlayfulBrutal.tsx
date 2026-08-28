@@ -197,6 +197,15 @@ export function Hero({ onScrollToWork }: { onScrollToWork?: () => void }) {
   const container = useRef(null);
   const textRef = useRef(null);
   const shapeRef = useRef(null);
+  const [roleIndex, setRoleIndex] = useState(0);
+  const roles = ["Full-Stack Developer", "Backend Engineer", "AI Enthusiast", "Freelancer"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex(prev => (prev + 1) % roles.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [roles.length]);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -207,6 +216,55 @@ export function Hero({ onScrollToWork }: { onScrollToWork?: () => void }) {
         stagger: 0.1,
         duration: 1.5,
         ease: "power4.out"
+      });
+
+      // Hero subtitle fade in
+      gsap.from(".hero-subtitle", {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        delay: 0.8,
+        ease: "power3.out"
+      });
+
+      // Badges stagger
+      gsap.from(".hero-badge", {
+        scale: 0,
+        opacity: 0,
+        stagger: 0.12,
+        duration: 0.6,
+        delay: 1.2,
+        ease: "back.out(1.7)"
+      });
+
+      // Stat counters slide up
+      gsap.from(".hero-stat", {
+        y: 60,
+        opacity: 0,
+        stagger: 0.15,
+        duration: 0.8,
+        delay: 1.5,
+        ease: "power3.out"
+      });
+
+      // Tech stack pills slide in
+      gsap.from(".hero-tech", {
+        x: -30,
+        opacity: 0,
+        stagger: 0.08,
+        duration: 0.5,
+        delay: 2,
+        ease: "power2.out"
+      });
+
+      // CTA buttons pop
+      gsap.from(".hero-cta", {
+        scale: 0.5,
+        opacity: 0,
+        stagger: 0.15,
+        duration: 0.6,
+        delay: 1.8,
+        ease: "back.out(1.7)"
       });
 
       // Spinning Shape
@@ -255,26 +313,72 @@ export function Hero({ onScrollToWork }: { onScrollToWork?: () => void }) {
               RISHO
             </h1>
           </div>
-          
-          <p className="mt-6 text-md md:text-lg font-bold uppercase text-black max-w-md tracking-wider">
-            Full-Stack Developer & Cloud Architect based in India.
+
+          {/* Animated Role Rotator */}
+          <div className="hero-subtitle mt-6 h-10 overflow-hidden relative w-full flex justify-center lg:justify-start">
+            <motion.div
+              key={roleIndex}
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -40, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="absolute"
+            >
+              <p className="text-lg md:text-xl font-black uppercase tracking-wider text-[#0047FF]">
+                {roles[roleIndex]}
+              </p>
+            </motion.div>
+          </div>
+
+          <p className="hero-subtitle mt-2 text-sm md:text-md font-bold uppercase text-black/70 max-w-md tracking-wider">
+            2nd Year CSE Student at LPU • Building real products since Semester 2
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-3 justify-center lg:justify-start">
-            <span className="border-2 border-black bg-white px-3 py-1.5 text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] text-black">
+          {/* Badges */}
+          <div className="mt-5 flex flex-wrap gap-3 justify-center lg:justify-start">
+            <span className="hero-badge border-2 border-black bg-white px-3 py-1.5 text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] text-black">
               🚀 3+ Live Sites
             </span>
-            <span className="border-2 border-black bg-[#CCFF00] px-3 py-1.5 text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] text-black">
-              ☁️ AWS Academy
+            <span className="hero-badge border-2 border-black bg-[#CCFF00] px-3 py-1.5 text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] text-black">
+              🔥 Supabase / Firebase
             </span>
-            <span className="border-2 border-black bg-[#FF4D00] px-3 py-1.5 text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] text-black">
+            <span className="hero-badge border-2 border-black bg-[#FF4D00] px-3 py-1.5 text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] text-black">
+              🤖 Ollama / AI
+            </span>
+            <span className="hero-badge border-2 border-black bg-[#0047FF] px-3 py-1.5 text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] text-white">
               💻 OOP & Logic
             </span>
           </div>
 
+          {/* Animated Stat Counters */}
+          <div className="mt-6 flex gap-4 md:gap-6 justify-center lg:justify-start">
+            {[
+              { number: "3+", label: "Projects Live" },
+              { number: "2nd", label: "Year B.Tech" },
+              { number: "6+", label: "Tools & APIs" },
+            ].map((stat, i) => (
+              <div key={i} className="hero-stat border-2 border-black bg-white px-4 py-3 shadow-[4px_4px_0px_0px_#000] text-center">
+                <p className="text-2xl md:text-3xl font-black text-[#FF4D00]">{stat.number}</p>
+                <p className="text-[10px] md:text-xs font-black uppercase text-black tracking-wider">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Tech Stack Strip */}
+          <div className="mt-5 flex flex-wrap gap-2 justify-center lg:justify-start">
+            {["React", "TypeScript", "Supabase", "Firebase", "Ollama", "Node.js", "Vite", "GSAP"].map((tech, i) => (
+              <span key={i} className="hero-tech bg-black text-white text-[10px] font-bold uppercase px-2.5 py-1 tracking-wider">
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {/* CTA Buttons */}
           <div className="mt-8 flex gap-4">
-            <MagneticBtn onClick={onScrollToWork} className="bg-[#0047FF] text-white">View Projects</MagneticBtn>
-            <a href="mailto:enr.cse@gmail.com">
+            <div className="hero-cta">
+              <MagneticBtn onClick={onScrollToWork} className="bg-[#0047FF] text-white">View Projects</MagneticBtn>
+            </div>
+            <a href="mailto:enr.cse@gmail.com" className="hero-cta">
               <MagneticBtn className="bg-white hover:bg-[#CCFF00] text-black">Say hi <ArrowUpRight className="ml-2" /></MagneticBtn>
             </a>
           </div>
