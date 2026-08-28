@@ -632,8 +632,8 @@ export function AboutMe() {
                   { name: "C++ / Python", level: 85 },
                   { name: "React / TypeScript", level: 80 },
                   { name: "Node.js / Express", level: 75 },
-                  { name: "AWS Cloud", level: 70 },
-                  { name: "Networking (CCNA)", level: 65 },
+                  { name: "Supabase / Firebase", level: 78 },
+                  { name: "Ollama / AI APIs", level: 65 },
                   { name: "MongoDB / MySQL", level: 70 },
                 ].map((skill, i) => (
                   <div key={i} className="flex items-center gap-3">
@@ -684,10 +684,10 @@ export function Experience() {
           <div className="border-4 border-white bg-[#1A1A1A] p-10 shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)]">
             <div className="flex items-center gap-3 mb-2">
               <span className="bg-[#FF4D00] text-black text-xs font-black uppercase px-2 py-1">Experience</span>
-              <span className="bg-white text-black text-xs font-black uppercase px-2 py-1">2024 — Present</span>
+              <span className="bg-white text-black text-xs font-black uppercase px-2 py-1">2nd Sem 2025 — Present</span>
             </div>
             <h3 className="text-3xl font-black uppercase text-white mt-4 mb-2">Freelance Web Developer</h3>
-            <p className="text-sm font-bold text-gray-400 uppercase mb-6">Self-Employed • Remote</p>
+            <p className="text-sm font-bold text-gray-400 uppercase mb-6">Self-Employed • Remote • Started in 2nd Semester</p>
             <div className="space-y-3">
               {[
                 "Built and deployed 3 commercial websites for active businesses",
@@ -711,21 +711,21 @@ export function Experience() {
             </div>
           </div>
 
-          {/* AWS Cloud Internship / Training */}
+          {/* Backend & BaaS Experience */}
           <div className="border-4 border-white bg-[#1A1A1A] p-10 shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)]">
             <div className="flex items-center gap-3 mb-2">
-              <span className="bg-[#0047FF] text-white text-xs font-black uppercase px-2 py-1">Training</span>
-              <span className="bg-white text-black text-xs font-black uppercase px-2 py-1">2025 — 2026</span>
+              <span className="bg-[#0047FF] text-white text-xs font-black uppercase px-2 py-1">Backend / BaaS</span>
+              <span className="bg-white text-black text-xs font-black uppercase px-2 py-1">2025 — Present</span>
             </div>
-            <h3 className="text-3xl font-black uppercase text-white mt-4 mb-2">AWS Academy Learner</h3>
-            <p className="text-sm font-bold text-gray-400 uppercase mb-6">AWS Academy • LPU Campus</p>
+            <h3 className="text-3xl font-black uppercase text-white mt-4 mb-2">Backend & Cloud Services</h3>
+            <p className="text-sm font-bold text-gray-400 uppercase mb-6">Supabase • Firebase • Google Stitch</p>
             <div className="space-y-3">
               {[
-                "Completed AWS Academy Cloud Foundations certification coursework",
-                "Completed AWS Academy Cloud Architecting program",
-                "Hands-on labs with EC2, S3, VPC, IAM, and Lambda services",
-                "Designed and deployed virtual private cloud architectures",
-                "Learned auto-scaling, load balancing, and serverless computing"
+                "Built full-stack apps with Supabase for authentication, database, and real-time features",
+                "Integrated Firebase for hosting, Firestore database, and push notifications",
+                "Used Google Stitch for data aggregation and third-party API orchestration",
+                "Managed and secured API keys across multiple environments and platforms",
+                "Designed REST API integrations connecting frontends to BaaS providers"
               ].map((point, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <span className="h-2 w-2 bg-[#FF4D00] rounded-full mt-1.5 flex-shrink-0" />
@@ -734,27 +734,27 @@ export function Experience() {
               ))}
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
-              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">AWS</span>
-              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">EC2</span>
-              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">S3</span>
-              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">VPC</span>
-              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">Lambda</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">Supabase</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">Firebase</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">Google Stitch</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">REST APIs</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">API Keys</span>
             </div>
           </div>
 
-          {/* CCNA Networking */}
+          {/* AI / LLM Experience */}
           <div className="border-4 border-white bg-[#1A1A1A] p-10 shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] md:col-span-2">
             <div className="flex items-center gap-3 mb-2">
-              <span className="bg-[#CCFF00] text-black text-xs font-black uppercase px-2 py-1">Training</span>
-              <span className="bg-white text-black text-xs font-black uppercase px-2 py-1">2025 — 2026</span>
+              <span className="bg-[#CCFF00] text-black text-xs font-black uppercase px-2 py-1">AI / LLM</span>
+              <span className="bg-white text-black text-xs font-black uppercase px-2 py-1">2025 — Present</span>
             </div>
-            <h3 className="text-3xl font-black uppercase text-white mt-4 mb-2">CCNA Networking — Cisco Academy</h3>
-            <p className="text-sm font-bold text-gray-400 uppercase mb-6">Cisco Networking Academy • LPU Campus</p>
+            <h3 className="text-3xl font-black uppercase text-white mt-4 mb-2">AI & Local LLM Integration</h3>
+            <p className="text-sm font-bold text-gray-400 uppercase mb-6">Ollama • Local Models • API Integration</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                "Routing & switching protocol configuration on Cisco hardware",
-                "IP subnetting, VLSM, and network topology design",
-                "Network security fundamentals and access control lists"
+                "Running and experimenting with local LLMs using Ollama for AI-powered workflows",
+                "Integrating AI model APIs into web applications for intelligent features",
+                "Managing API keys, rate limits, and secure credential handling across services"
               ].map((point, i) => (
                 <div key={i} className="border-2 border-gray-700 p-4 flex items-start gap-2">
                   <span className="h-2 w-2 bg-[#CCFF00] rounded-full mt-1.5 flex-shrink-0" />
@@ -810,23 +810,23 @@ export function StrengthsAchievements() {
               {[
                 {
                   title: "3 Live Commercial Websites",
-                  desc: "Designed, developed, and deployed production websites for real businesses as a first-year student.",
+                  desc: "Designed, developed, and deployed production websites for real businesses starting from 2nd semester.",
                   tag: "PROJECTS"
                 },
                 {
-                  title: "AWS Academy Certifications",
-                  desc: "Completed Cloud Foundations and Cloud Architecting programs with hands-on labs.",
-                  tag: "CERTIFICATION"
+                  title: "BaaS & API Integration",
+                  desc: "Hands-on experience with Supabase, Firebase, and Google Stitch — building production backends.",
+                  tag: "BACKEND"
                 },
                 {
-                  title: "CCNA Networking Knowledge",
-                  desc: "Cisco academy training in routing, switching, subnetting, and network security.",
-                  tag: "CERTIFICATION"
+                  title: "AI & LLM Exploration",
+                  desc: "Running local LLMs with Ollama and integrating AI APIs into web applications.",
+                  tag: "AI / ML"
                 },
                 {
-                  title: "200+ Programming Problems Solved",
-                  desc: "Consistent practice in C++ and Python on competitive programming platforms.",
-                  tag: "PRACTICE"
+                  title: "Freelancing Since 2nd Semester",
+                  desc: "Started taking real client projects as a first-year student — now in 2nd year, 3rd semester.",
+                  tag: "CAREER"
                 },
                 {
                   title: "Full-Stack Portfolio Website",
