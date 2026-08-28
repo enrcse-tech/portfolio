@@ -429,6 +429,24 @@ export function BentoGrid({ onScrollToToolkit }: { onScrollToToolkit?: React.Ref
                   <span className="bg-black text-white text-xs font-black uppercase px-2.5 py-1">OOP Architecture</span>
                   <span className="bg-black text-white text-xs font-black uppercase px-2.5 py-1">Algorithmic Math</span>
                 </div>
+                <div className="flex flex-col gap-2 mt-4 text-xs md:text-sm font-bold text-black border-t-2 border-black pt-4">
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 bg-black rounded-full" />
+                    <span>Memory Optimization & Performance Profiling</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 bg-black rounded-full" />
+                    <span>Automated Automation & Custom Scripting</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 bg-black rounded-full" />
+                    <span>Real-time Rendering & Shading Engines</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 bg-black rounded-full" />
+                    <span>Socket Programming & Network Interfaces</span>
+                  </div>
+                </div>
               </div>
             </div>
             <p className="text-2xl font-bold uppercase italic text-black">C++ & Python Specialist</p>
