@@ -556,8 +556,8 @@ export function BentoGrid({ onScrollToToolkit }: { onScrollToToolkit?: React.Ref
             </div>
           </div>
           <div className="bento-item md:col-span-1 border-4 border-black bg-white p-8 shadow-[12px_12px_0px_0px_#000]">
-            <h4 className="text-3xl font-black uppercase text-black">AWS Cloud</h4>
-            <p className="mt-4 font-bold text-black text-sm">Designing secure, scalable host architectures.</p>
+            <h4 className="text-3xl font-black uppercase text-black">Supabase BaaS</h4>
+            <p className="mt-4 font-bold text-black text-sm">Real-time database, auth, and storage services.</p>
           </div>
           <div className="bento-item md:col-span-2 border-4 border-black bg-[#0047FF] text-white p-8 shadow-[12px_12px_0px_0px_#000]">
             <div className="flex justify-between items-end h-full">
@@ -575,7 +575,7 @@ export function TickerTape() {
   return (
     <section className="bg-black py-12 overflow-hidden flex flex-col gap-6">
       <Marquee text="EPRIN NOBLE RISHO" direction={1} className="bg-[#FF4D00] rotate-2 scale-110 border-y-0" />
-      <Marquee text="C++ • PYTHON • AWS CLOUD" direction={-1} className="bg-[#CCFF00] -rotate-1 scale-105 border-y-0" />
+      <Marquee text="C++ • PYTHON • SUPABASE • FIREBASE" direction={-1} className="bg-[#CCFF00] -rotate-1 scale-105 border-y-0" />
       <Marquee text="WINGS TUITION • FRENCH BAKERS" direction={1} className="bg-[#0047FF] rotate-1 text-white border-y-0" />
     </section>
   );
@@ -609,8 +609,8 @@ export function SplitInteractive({ onScrollToWhyUs }: { onScrollToWhyUs?: React.
         <div className="w-full md:w-1/2 px-6 py-32 space-y-32">
           {[
             { title: "Full-Stack Capability", desc: "React, Node.js, PHP, and databases (MongoDB/MySQL) to build end-to-end web products." },
-            { title: "Cloud Architecture", desc: "Deploying, hosting, and maintaining active server instances and CDNs on AWS." },
-            { title: "Object-Oriented Logic", desc: "Deep logic foundation in C++ & Python with 200+ solved programming problems." },
+            { title: "Backend & BaaS", desc: "Supabase & Firebase integration for real-time databases, authentication, and cloud storage." },
+            { title: "Object-Oriented Logic", desc: "Strong C++ & Python fundamentals with focus on OOP design patterns and algorithms." },
             { title: "Client Deployed", desc: "Three live production web applications launched for local commercial clients." }
           ].map((item, i) => (
             <div key={i} className="border-4 border-black bg-white p-12 shadow-[12px_12px_0px_0px_#000]">
@@ -946,7 +946,7 @@ export function CareerGoal() {
             </h3>
             <div className="border-2 border-white bg-white/10 p-6 mb-6">
               <p className="text-xl font-black text-white leading-relaxed">
-                To become a <span className="bg-[#CCFF00] text-black px-2">Cloud Architect</span> and <span className="bg-[#FF4D00] text-black px-2">Full-Stack Engineer</span> building scalable, secure systems that power real businesses.
+                To become a <span className="bg-[#CCFF00] text-black px-2">Full-Stack Engineer</span> and <span className="bg-[#FF4D00] text-black px-2">AI Systems Developer</span> building scalable, intelligent apps that power real businesses.
               </p>
             </div>
             <div className="space-y-3">
@@ -980,7 +980,7 @@ export function CareerGoal() {
                 },
                 {
                   title: "Modern Tech Stack",
-                  desc: "React, TypeScript, Node.js, AWS, Three.js — I work with industry-standard tools.",
+                  desc: "React, TypeScript, Node.js, Supabase, Firebase, Ollama — working with modern tools.",
                   color: "bg-[#CCFF00]"
                 },
                 {
@@ -1022,20 +1022,20 @@ export function Credentials({ onScrollToCredentials }: { onScrollToCredentials?:
               btnLink: "https://www.lpu.in"
             },
             { 
-              title: "AWS Cloud", 
-              subtitle: "Academy Certs", 
+              title: "Supabase BaaS", 
+              subtitle: "Backend Stack", 
               color: "bg-[#FF4D00]", 
-              bullets: ["Cloud Foundations", "Cloud Architecting", "VPC & Serverless Setup"],
-              btnText: "AWS Academy",
-              btnLink: "https://aws.amazon.com/training/"
+              bullets: ["PostgreSQL Database", "User Authentication", "Real-time Subscriptions & Storage"],
+              btnText: "Supabase Docs",
+              btnLink: "https://supabase.com"
             },
             { 
-              title: "CCNA Network", 
-              subtitle: "Cisco Academy", 
+              title: "Firebase & AI", 
+              subtitle: "Cloud & LLM", 
               color: "bg-[#CCFF00]", 
-              bullets: ["Routing & Switching", "IP Subnetting & Topologies", "Network Security"],
-              btnText: "Cisco Networking",
-              btnLink: "https://www.netacad.com"
+              bullets: ["Firestore & Hosting", "Ollama Local LLMs", "Google Stitch & API Keys"],
+              btnText: "Ollama AI",
+              btnLink: "https://ollama.com"
             }
           ].map((c, i) => (
             <div key={i} className={cn("relative border-4 border-black p-12 flex flex-col justify-between shadow-[16px_16px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none transition-all hover:translate-x-4 hover:translate-y-4", c.color)}>
