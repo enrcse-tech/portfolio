@@ -543,27 +543,384 @@ export function SplitInteractive({ onScrollToWhyUs }: { onScrollToWhyUs?: React.
   );
 }
 
-export function FloatingStickers() {
+// ABOUT ME — Academic Background + Skills (Exam Q3B: Points 2 & 3)
+export function AboutMe() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".about-card", {
+        y: 80,
+        opacity: 0,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          end: "top 30%",
+          scrub: 1,
+        }
+      });
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative h-[60vh] bg-white border-b-8 border-black flex items-center justify-center overflow-hidden">
-      <div className="text-center z-10 px-6">
-        <h2 className="text-6xl md:text-9xl font-black uppercase leading-tight italic text-black">
-          Student <span className="bg-[#CCFF00] px-4">Creator</span>
-        </h2>
-      </div>
-      {/* Floating elements */}
-      {[
-        { icon: <Star size={100} className="fill-[#FF4D00] text-black" />, pos: "top-10 left-[10%]" },
-        { icon: <Zap size={100} className="fill-[#0047FF] text-white" />, pos: "bottom-20 right-[15%]" },
-        { icon: <Smile size={100} className="fill-[#CCFF00] text-black" />, pos: "top-[20%] right-[10%]" },
-        { icon: <Hexagon size={100} className="fill-black text-black" />, pos: "bottom-[10%] left-[20%]" },
-      ].map((s, i) => (
-        <div key={i} className={cn("absolute scale-[0.5] md:scale-1 pointer-events-none", s.pos)}>
-          <div className="animate-bounce" style={{ animationDuration: `${(i + 2) * 0.5}s` }}>
-            {s.icon}
+    <section ref={sectionRef} className="bg-white py-32 border-b-8 border-black">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div className="mb-16">
+          <h2 className="text-7xl font-black uppercase leading-none tracking-tighter text-black">
+            About <br /> <span className="text-[#FF4D00]">Me</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Academic Background */}
+          <div className="about-card border-4 border-black bg-[#E0E0E0] p-10 shadow-[12px_12px_0px_0px_#000]">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-14 w-14 rounded-full border-4 border-black bg-[#0047FF] flex items-center justify-center">
+                <Star size={28} className="text-white fill-white" />
+              </div>
+              <h3 className="text-3xl font-black uppercase text-black">Academic Background</h3>
+            </div>
+            <div className="space-y-4">
+              <div className="border-2 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#000]">
+                <p className="text-xs font-black uppercase text-[#FF4D00]">University</p>
+                <p className="text-lg font-black text-black">Lovely Professional University (LPU)</p>
+              </div>
+              <div className="border-2 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#000]">
+                <p className="text-xs font-black uppercase text-[#0047FF]">Program</p>
+                <p className="text-lg font-black text-black">B.Tech — Computer Science & Engineering</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="border-2 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#000]">
+                  <p className="text-xs font-black uppercase text-gray-500">CGPA</p>
+                  <p className="text-2xl font-black text-black">7.2 / 10</p>
+                </div>
+                <div className="border-2 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#000]">
+                  <p className="text-xs font-black uppercase text-gray-500">Batch</p>
+                  <p className="text-2xl font-black text-black">2025–2029</p>
+                </div>
+              </div>
+              <div className="border-2 border-black bg-[#CCFF00] p-4 shadow-[4px_4px_0px_0px_#000]">
+                <p className="text-xs font-black uppercase text-black mb-2">Coursework Focus</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-black text-white text-xs font-black uppercase px-2 py-1">Cloud Computing</span>
+                  <span className="bg-black text-white text-xs font-black uppercase px-2 py-1">OOP</span>
+                  <span className="bg-black text-white text-xs font-black uppercase px-2 py-1">AI & ML</span>
+                  <span className="bg-black text-white text-xs font-black uppercase px-2 py-1">Data Structures</span>
+                  <span className="bg-black text-white text-xs font-black uppercase px-2 py-1">Networking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Skills */}
+          <div className="about-card border-4 border-black bg-[#E0E0E0] p-10 shadow-[12px_12px_0px_0px_#000]">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-14 w-14 rounded-full border-4 border-black bg-[#CCFF00] flex items-center justify-center">
+                <Zap size={28} className="text-black" />
+              </div>
+              <h3 className="text-3xl font-black uppercase text-black">My Skills</h3>
+            </div>
+
+            {/* Technical Skills */}
+            <div className="mb-6">
+              <p className="text-sm font-black uppercase text-[#FF4D00] mb-3 border-b-2 border-black pb-2">Technical Skills</p>
+              <div className="space-y-3">
+                {[
+                  { name: "C++ / Python", level: 85 },
+                  { name: "React / TypeScript", level: 80 },
+                  { name: "Node.js / Express", level: 75 },
+                  { name: "AWS Cloud", level: 70 },
+                  { name: "Networking (CCNA)", level: 65 },
+                  { name: "MongoDB / MySQL", level: 70 },
+                ].map((skill, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <span className="text-xs font-black uppercase text-black w-40 flex-shrink-0">{skill.name}</span>
+                    <div className="flex-1 h-4 border-2 border-black bg-white">
+                      <div
+                        className="h-full bg-black"
+                        style={{ width: `${skill.level}%` }}
+                      />
+                    </div>
+                    <span className="text-xs font-black text-black w-8">{skill.level}%</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Soft Skills */}
+            <div>
+              <p className="text-sm font-black uppercase text-[#0047FF] mb-3 border-b-2 border-black pb-2">Soft Skills</p>
+              <div className="flex flex-wrap gap-2">
+                {["Problem Solving", "Team Collaboration", "Communication", "Time Management", "Adaptability", "Quick Learner", "Self-Motivated", "Analytical Thinking"].map((skill, i) => (
+                  <span key={i} className="border-2 border-black bg-white px-3 py-1.5 text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] text-black">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      ))}
+      </div>
+    </section>
+  );
+}
+
+// EXPERIENCE & INTERNSHIP (Exam Q3B: Points 4 & 5)
+export function Experience() {
+  return (
+    <section className="bg-black py-32 border-b-8 border-black">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div className="mb-16">
+          <h2 className="text-7xl font-black uppercase leading-none tracking-tighter text-white">
+            Experience & <br /> <span className="text-[#CCFF00]">Internship</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Freelance Experience */}
+          <div className="border-4 border-white bg-[#1A1A1A] p-10 shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)]">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="bg-[#FF4D00] text-black text-xs font-black uppercase px-2 py-1">Experience</span>
+              <span className="bg-white text-black text-xs font-black uppercase px-2 py-1">2024 — Present</span>
+            </div>
+            <h3 className="text-3xl font-black uppercase text-white mt-4 mb-2">Freelance Web Developer</h3>
+            <p className="text-sm font-bold text-gray-400 uppercase mb-6">Self-Employed • Remote</p>
+            <div className="space-y-3">
+              {[
+                "Built and deployed 3 commercial websites for active businesses",
+                "Designed responsive frontends with React, TypeScript, and Tailwind CSS",
+                "Managed full project lifecycle from client meetings to production deployment",
+                "Implemented SEO optimization, PWA capabilities, and performance tuning",
+                "Handled hosting, domain configuration, and post-launch maintenance"
+              ].map((point, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <span className="h-2 w-2 bg-[#CCFF00] rounded-full mt-1.5 flex-shrink-0" />
+                  <span className="text-sm font-bold text-gray-300">{point}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-wrap gap-2">
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">React</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">TypeScript</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">Vite</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">Vercel</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">SEO</span>
+            </div>
+          </div>
+
+          {/* AWS Cloud Internship / Training */}
+          <div className="border-4 border-white bg-[#1A1A1A] p-10 shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)]">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="bg-[#0047FF] text-white text-xs font-black uppercase px-2 py-1">Training</span>
+              <span className="bg-white text-black text-xs font-black uppercase px-2 py-1">2025 — 2026</span>
+            </div>
+            <h3 className="text-3xl font-black uppercase text-white mt-4 mb-2">AWS Academy Learner</h3>
+            <p className="text-sm font-bold text-gray-400 uppercase mb-6">AWS Academy • LPU Campus</p>
+            <div className="space-y-3">
+              {[
+                "Completed AWS Academy Cloud Foundations certification coursework",
+                "Completed AWS Academy Cloud Architecting program",
+                "Hands-on labs with EC2, S3, VPC, IAM, and Lambda services",
+                "Designed and deployed virtual private cloud architectures",
+                "Learned auto-scaling, load balancing, and serverless computing"
+              ].map((point, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <span className="h-2 w-2 bg-[#FF4D00] rounded-full mt-1.5 flex-shrink-0" />
+                  <span className="text-sm font-bold text-gray-300">{point}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-wrap gap-2">
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">AWS</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">EC2</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">S3</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">VPC</span>
+              <span className="border border-gray-600 text-gray-400 text-xs font-bold px-2 py-1">Lambda</span>
+            </div>
+          </div>
+
+          {/* CCNA Networking */}
+          <div className="border-4 border-white bg-[#1A1A1A] p-10 shadow-[12px_12px_0px_0px_rgba(255,255,255,0.15)] md:col-span-2">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="bg-[#CCFF00] text-black text-xs font-black uppercase px-2 py-1">Training</span>
+              <span className="bg-white text-black text-xs font-black uppercase px-2 py-1">2025 — 2026</span>
+            </div>
+            <h3 className="text-3xl font-black uppercase text-white mt-4 mb-2">CCNA Networking — Cisco Academy</h3>
+            <p className="text-sm font-bold text-gray-400 uppercase mb-6">Cisco Networking Academy • LPU Campus</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                "Routing & switching protocol configuration on Cisco hardware",
+                "IP subnetting, VLSM, and network topology design",
+                "Network security fundamentals and access control lists"
+              ].map((point, i) => (
+                <div key={i} className="border-2 border-gray-700 p-4 flex items-start gap-2">
+                  <span className="h-2 w-2 bg-[#CCFF00] rounded-full mt-1.5 flex-shrink-0" />
+                  <span className="text-sm font-bold text-gray-300">{point}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// STRENGTHS & ACHIEVEMENTS (Exam Q3B: Point 7)
+export function StrengthsAchievements() {
+  return (
+    <section className="relative bg-white py-32 border-b-8 border-black overflow-hidden">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="mb-16">
+          <h2 className="text-7xl font-black uppercase leading-none tracking-tighter text-black">
+            Strengths & <br /> <span className="text-[#0047FF]">Achievements</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Strengths */}
+          <div className="border-4 border-black bg-[#CCFF00] p-10 shadow-[12px_12px_0px_0px_#000]">
+            <h3 className="text-3xl font-black uppercase text-black mb-8">My Strengths</h3>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { title: "Problem Solver", icon: "🧠", desc: "Logical approach to breaking down complex challenges" },
+                { title: "Quick Learner", icon: "⚡", desc: "Rapidly adopt new frameworks & technologies" },
+                { title: "Self-Driven", icon: "🚀", desc: "Built 3 commercial sites without external guidance" },
+                { title: "Adaptable", icon: "🔄", desc: "Comfortable shifting between frontend, backend, & cloud" },
+                { title: "Detail Oriented", icon: "🎯", desc: "Clean code practices and pixel-perfect UI delivery" },
+                { title: "Team Player", icon: "🤝", desc: "Effective communication with clients and collaborators" },
+              ].map((s, i) => (
+                <div key={i} className="border-2 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#000]">
+                  <p className="text-2xl mb-2">{s.icon}</p>
+                  <p className="text-sm font-black uppercase text-black">{s.title}</p>
+                  <p className="text-xs font-bold text-gray-600 mt-1">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Achievements */}
+          <div className="border-4 border-black bg-[#FF4D00] p-10 shadow-[12px_12px_0px_0px_#000]">
+            <h3 className="text-3xl font-black uppercase text-black mb-8">Key Achievements</h3>
+            <div className="space-y-4">
+              {[
+                {
+                  title: "3 Live Commercial Websites",
+                  desc: "Designed, developed, and deployed production websites for real businesses as a first-year student.",
+                  tag: "PROJECTS"
+                },
+                {
+                  title: "AWS Academy Certifications",
+                  desc: "Completed Cloud Foundations and Cloud Architecting programs with hands-on labs.",
+                  tag: "CERTIFICATION"
+                },
+                {
+                  title: "CCNA Networking Knowledge",
+                  desc: "Cisco academy training in routing, switching, subnetting, and network security.",
+                  tag: "CERTIFICATION"
+                },
+                {
+                  title: "200+ Programming Problems Solved",
+                  desc: "Consistent practice in C++ and Python on competitive programming platforms.",
+                  tag: "PRACTICE"
+                },
+                {
+                  title: "Full-Stack Portfolio Website",
+                  desc: "Built this interactive 3D portfolio using React, Three.js, GSAP, and Framer Motion.",
+                  tag: "PROJECT"
+                },
+              ].map((a, i) => (
+                <div key={i} className="border-2 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#000]">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="bg-black text-white text-[10px] font-black uppercase px-2 py-0.5">{a.tag}</span>
+                  </div>
+                  <p className="text-sm font-black uppercase text-black">{a.title}</p>
+                  <p className="text-xs font-bold text-gray-600 mt-1">{a.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// CAREER GOAL & VALUE PROPOSITION (Exam Q3B: Points 8 & 9)
+export function CareerGoal() {
+  return (
+    <section className="relative bg-[#E0E0E0] py-32 border-b-8 border-black overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(#000_2px,transparent_2px)] bg-[size:20px_20px]" />
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Career Goal */}
+          <div className="border-4 border-black bg-[#0047FF] p-12 shadow-[12px_12px_0px_0px_#000]">
+            <h3 className="text-4xl font-black uppercase text-white mb-6">
+              🎯 Career Goal
+            </h3>
+            <div className="border-2 border-white bg-white/10 p-6 mb-6">
+              <p className="text-xl font-black text-white leading-relaxed">
+                To become a <span className="bg-[#CCFF00] text-black px-2">Cloud Architect</span> and <span className="bg-[#FF4D00] text-black px-2">Full-Stack Engineer</span> building scalable, secure systems that power real businesses.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <p className="text-sm font-bold text-white/80">Industries I aspire to work in:</p>
+              <div className="flex flex-wrap gap-2">
+                {["Cloud Infrastructure", "SaaS Products", "FinTech", "EdTech", "AI / ML Platforms"].map((ind, i) => (
+                  <span key={i} className="border-2 border-white text-white text-xs font-black uppercase px-3 py-1.5">
+                    {ind}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Value Proposition */}
+          <div className="border-4 border-black bg-white p-12 shadow-[12px_12px_0px_0px_#000]">
+            <h3 className="text-4xl font-black uppercase text-black mb-6">
+              💎 What I Bring
+            </h3>
+            <div className="space-y-4">
+              {[
+                {
+                  title: "Proven Delivery",
+                  desc: "3 live production websites — not academic demos, real client projects serving real users.",
+                  color: "bg-[#FF4D00]"
+                },
+                {
+                  title: "End-to-End Capability",
+                  desc: "From UI design to backend APIs to cloud deployment — I handle the full pipeline.",
+                  color: "bg-[#0047FF]"
+                },
+                {
+                  title: "Modern Tech Stack",
+                  desc: "React, TypeScript, Node.js, AWS, Three.js — I work with industry-standard tools.",
+                  color: "bg-[#CCFF00]"
+                },
+                {
+                  title: "Growth Mindset",
+                  desc: "Self-taught developer who continuously learns and applies new technologies.",
+                  color: "bg-black"
+                }
+              ].map((v, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className={cn("h-10 w-10 flex-shrink-0 border-2 border-black flex items-center justify-center font-black text-sm", v.color, v.color === 'bg-black' || v.color === 'bg-[#0047FF]' ? 'text-white' : 'text-black')}>
+                    0{i + 1}
+                  </div>
+                  <div>
+                    <p className="text-lg font-black uppercase text-black">{v.title}</p>
+                    <p className="text-sm font-bold text-gray-600 mt-1">{v.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

@@ -7,7 +7,10 @@ import {
   BentoGrid,
   TickerTape,
   SplitInteractive,
-  FloatingStickers,
+  AboutMe,
+  Experience,
+  StrengthsAchievements,
+  CareerGoal,
   Credentials,
   CharacterReveal,
   TiltRecap,
@@ -49,8 +52,11 @@ export default function App() {
       <Services />
       <BentoGrid />
       <TickerTape />
+      <AboutMe />
+      <Experience />
       <SplitInteractive onScrollToWhyUs={agencyRef} />
-      <FloatingStickers />
+      <StrengthsAchievements />
+      <CareerGoal />
       <Credentials onScrollToCredentials={credentialsRef} />
       <CharacterReveal />
       <TiltRecap />
