@@ -351,15 +351,15 @@ export function Hero({ onScrollToWork }: { onScrollToWork?: () => void }) {
           </div>
 
           {/* Animated Stat Counters */}
-          <div className="mt-6 flex gap-4 md:gap-6 justify-center lg:justify-start">
+          <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 justify-center lg:justify-start w-full max-w-md">
             {[
               { number: "3+", label: "Projects Live" },
               { number: "2nd", label: "Year B.Tech" },
               { number: "6+", label: "Tools & APIs" },
             ].map((stat, i) => (
-              <div key={i} className="hero-stat border-2 border-black bg-white px-4 py-3 shadow-[4px_4px_0px_0px_#000] text-center">
-                <p className="text-2xl md:text-3xl font-black text-[#FF4D00]">{stat.number}</p>
-                <p className="text-[10px] md:text-xs font-black uppercase text-black tracking-wider">{stat.label}</p>
+              <div key={i} className="hero-stat border-2 border-black bg-white px-2 sm:px-4 py-2 sm:py-3 shadow-[3px_3px_0px_0px_#000] sm:shadow-[4px_4px_0px_0px_#000] text-center">
+                <p className="text-xl sm:text-2xl md:text-3xl font-black text-[#FF4D00]">{stat.number}</p>
+                <p className="text-[9px] sm:text-[10px] md:text-xs font-black uppercase text-black tracking-wider">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -658,30 +658,30 @@ export function AboutMe() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Academic Background */}
-          <div className="about-card border-4 border-black bg-[#E0E0E0] p-10 shadow-[12px_12px_0px_0px_#000]">
+          <div className="about-card border-4 border-black bg-[#E0E0E0] p-6 sm:p-8 md:p-10 shadow-[8px_8px_0px_0px_#000] md:shadow-[12px_12px_0px_0px_#000]">
             <div className="flex items-center gap-4 mb-6">
-              <div className="h-14 w-14 rounded-full border-4 border-black bg-[#0047FF] flex items-center justify-center">
-                <Star size={28} className="text-white fill-white" />
+              <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full border-4 border-black bg-[#0047FF] flex items-center justify-center flex-shrink-0">
+                <Star size={24} className="text-white fill-white" />
               </div>
-              <h3 className="text-3xl font-black uppercase text-black">Academic Background</h3>
+              <h3 className="text-2xl sm:text-3xl font-black uppercase text-black">Academic Background</h3>
             </div>
             <div className="space-y-4">
               <div className="border-2 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#000]">
                 <p className="text-xs font-black uppercase text-[#FF4D00]">University</p>
-                <p className="text-lg font-black text-black">Lovely Professional University (LPU)</p>
+                <p className="text-base sm:text-lg font-black text-black">Lovely Professional University (LPU)</p>
               </div>
               <div className="border-2 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#000]">
                 <p className="text-xs font-black uppercase text-[#0047FF]">Program</p>
-                <p className="text-lg font-black text-black">B.Tech — Computer Science & Engineering</p>
+                <p className="text-base sm:text-lg font-black text-black">B.Tech — Computer Science & Engineering</p>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="border-2 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#000]">
                   <p className="text-xs font-black uppercase text-gray-500">CGPA</p>
-                  <p className="text-2xl font-black text-black">7.2 / 10</p>
+                  <p className="text-xl sm:text-2xl font-black text-black">7.2 / 10</p>
                 </div>
                 <div className="border-2 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#000]">
                   <p className="text-xs font-black uppercase text-gray-500">Batch</p>
-                  <p className="text-2xl font-black text-black">2025–2029</p>
+                  <p className="text-xl sm:text-2xl font-black text-black">2025–2029</p>
                 </div>
               </div>
               <div className="border-2 border-black bg-[#CCFF00] p-4 shadow-[4px_4px_0px_0px_#000]">
@@ -698,12 +698,12 @@ export function AboutMe() {
           </div>
 
           {/* Skills */}
-          <div className="about-card border-4 border-black bg-[#E0E0E0] p-10 shadow-[12px_12px_0px_0px_#000]">
+          <div className="about-card border-4 border-black bg-[#E0E0E0] p-6 sm:p-8 md:p-10 shadow-[8px_8px_0px_0px_#000] md:shadow-[12px_12px_0px_0px_#000]">
             <div className="flex items-center gap-4 mb-6">
-              <div className="h-14 w-14 rounded-full border-4 border-black bg-[#CCFF00] flex items-center justify-center">
-                <Zap size={28} className="text-black" />
+              <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full border-4 border-black bg-[#CCFF00] flex items-center justify-center flex-shrink-0">
+                <Zap size={24} className="text-black" />
               </div>
-              <h3 className="text-3xl font-black uppercase text-black">My Skills</h3>
+              <h3 className="text-2xl sm:text-3xl font-black uppercase text-black">My Skills</h3>
             </div>
 
             {/* Technical Skills */}
@@ -718,15 +718,15 @@ export function AboutMe() {
                   { name: "Ollama / AI APIs", level: 65 },
                   { name: "MongoDB / MySQL", level: 70 },
                 ].map((skill, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <span className="text-xs font-black uppercase text-black w-40 flex-shrink-0">{skill.name}</span>
-                    <div className="flex-1 h-4 border-2 border-black bg-white">
+                  <div key={i} className="flex items-center gap-2 sm:gap-3">
+                    <span className="text-[10px] sm:text-xs font-black uppercase text-black w-28 sm:w-36 md:w-40 flex-shrink-0 truncate">{skill.name}</span>
+                    <div className="flex-1 h-3.5 sm:h-4 border-2 border-black bg-white">
                       <div
                         className="h-full bg-black"
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
-                    <span className="text-xs font-black text-black w-8">{skill.level}%</span>
+                    <span className="text-[10px] sm:text-xs font-black text-black w-8 text-right">{skill.level}%</span>
                   </div>
                 ))}
               </div>
