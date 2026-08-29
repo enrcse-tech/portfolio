@@ -387,11 +387,11 @@ export function Hero({ onScrollToWork }: { onScrollToWork?: () => void }) {
         {/* Right Column: Interactive Lanyard */}
         <div className="w-full h-[40vh] md:h-[50vh] lg:h-[70vh] relative flex items-center justify-center border-4 border-black bg-white shadow-[12px_12px_0px_0px_#000] hover:shadow-none hover:translate-x-3 hover:translate-y-3 transition-all rounded-2xl overflow-hidden">
           {/* LPU Logo Watermark */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-0 p-8">
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-0 p-2">
             <img
               src="/lpu.jpg"
               alt="LPU Logo"
-              className="max-h-[75%] max-w-[75%] object-contain opacity-25 filter contrast-125 select-none"
+              className="w-[95%] h-[95%] object-contain opacity-25 filter contrast-125 select-none scale-110 sm:scale-125"
             />
           </div>
 
