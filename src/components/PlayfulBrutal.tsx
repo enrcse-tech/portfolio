@@ -168,8 +168,8 @@ export function BrutalCard({ title, img, color, url }: { title: string; img: str
 
 export function Navbar({ onNavigate }: { onNavigate?: (section: string) => void }) {
   return (
-    <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-      <div className="flex items-center gap-4 md:gap-8 rounded-full border-4 border-black bg-white px-5 md:px-8 py-3 md:py-4 shadow-[4px_4px_0px_0px_#000]">
+    <nav className="fixed top-4 sm:top-6 left-0 right-0 z-50 flex justify-center px-3 sm:px-4">
+      <div className="flex items-center gap-2 sm:gap-4 md:gap-8 rounded-full border-3 sm:border-4 border-black bg-white px-3 sm:px-5 md:px-8 py-2.5 sm:py-3 md:py-4 shadow-[3px_3px_0px_0px_#000] sm:shadow-[4px_4px_0px_0px_#000]">
         <Hexagon className="fill-black text-black" size={32} />
         <div className="flex gap-4 md:gap-6 text-xs md:text-sm font-bold uppercase tracking-widest text-black">
           {['Work', 'Toolkit', 'Credentials'].map(item => (
@@ -385,7 +385,7 @@ export function Hero({ onScrollToWork }: { onScrollToWork?: () => void }) {
         </div>
 
         {/* Right Column: Interactive Lanyard */}
-        <div className="w-full h-[40vh] md:h-[50vh] lg:h-[70vh] relative flex items-center justify-center border-4 border-black bg-white shadow-[12px_12px_0px_0px_#000] hover:shadow-none hover:translate-x-3 hover:translate-y-3 transition-all rounded-2xl overflow-hidden">
+        <div className="w-full h-[40vh] md:h-[50vh] lg:h-[70vh] relative flex items-center justify-center border-3 sm:border-4 border-black bg-white shadow-[6px_6px_0px_0px_#000] sm:shadow-[12px_12px_0px_0px_#000] hover:shadow-none hover:translate-x-1 sm:hover:translate-x-3 hover:translate-y-1 sm:hover:translate-y-3 transition-all rounded-xl sm:rounded-2xl overflow-hidden">
           {/* LPU Logo Watermark */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-0 p-2">
             <img
@@ -622,10 +622,10 @@ export function SplitInteractive({ onScrollToWhyUs }: { onScrollToWhyUs?: React.
             { title: "Object-Oriented Logic", desc: "Strong C++ & Python fundamentals with focus on OOP design patterns and algorithms." },
             { title: "Client Deployed", desc: "Three live production web applications launched for local commercial clients." }
           ].map((item, i) => (
-            <div key={i} className="border-4 border-black bg-white p-12 shadow-[12px_12px_0px_0px_#000]">
-              <span className="text-6xl font-black text-[#FF4D00]">0{i + 1}</span>
-              <h3 className="text-4xl font-black uppercase mt-4 mb-6 text-black">{item.title}</h3>
-              <p className="text-xl font-bold text-gray-700">{item.desc}</p>
+            <div key={i} className="border-3 sm:border-4 border-black bg-white p-6 sm:p-8 md:p-12 shadow-[6px_6px_0px_0px_#000] sm:shadow-[12px_12px_0px_0px_#000]">
+              <span className="text-4xl sm:text-5xl md:text-6xl font-black text-[#FF4D00]">0{i + 1}</span>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase mt-3 sm:mt-4 mb-4 sm:mb-6 text-black">{item.title}</h3>
+              <p className="text-base sm:text-lg md:text-xl font-bold text-gray-700">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -1047,11 +1047,11 @@ export function Credentials({ onScrollToCredentials }: { onScrollToCredentials?:
               btnLink: "https://ollama.com"
             }
           ].map((c, i) => (
-            <div key={i} className={cn("relative border-4 border-black p-12 flex flex-col justify-between shadow-[16px_16px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none transition-all hover:translate-x-4 hover:translate-y-4", c.color)}>
+            <div key={i} className={cn("relative border-3 sm:border-4 border-black p-6 sm:p-8 md:p-12 flex flex-col justify-between shadow-[8px_8px_0px_0px_rgba(255,255,255,0.2)] sm:shadow-[16px_16px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none transition-all hover:translate-x-2 hover:translate-y-2 sm:hover:translate-x-4 sm:hover:translate-y-4", c.color)}>
               <div>
-                <h3 className="text-4xl font-black uppercase mb-2 text-black">{c.title}</h3>
-                <div className="h-2 w-16 bg-black mb-8" />
-                <p className="text-2xl font-black tracking-tighter text-black uppercase">{c.subtitle}</p>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase mb-2 text-black">{c.title}</h3>
+                <div className="h-2 w-12 sm:w-16 bg-black mb-4 sm:mb-8" />
+                <p className="text-lg sm:text-xl md:text-2xl font-black tracking-tighter text-black uppercase">{c.subtitle}</p>
               </div>
               <ul className="mt-8 mb-8 space-y-4 font-bold uppercase text-xs md:text-sm text-black">
                 {c.bullets.map((b, idx) => (
@@ -1062,7 +1062,7 @@ export function Credentials({ onScrollToCredentials }: { onScrollToCredentials?:
                 href={c.btnLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full border-4 border-black bg-white py-4 text-center text-xl font-black uppercase shadow-[8px_8px_0px_0px_#000] hover:bg-black hover:text-white transition-colors text-black hover:text-white cursor-pointer block"
+                className="w-full border-3 sm:border-4 border-black bg-white py-3 sm:py-4 text-center text-base sm:text-lg md:text-xl font-black uppercase shadow-[4px_4px_0px_0px_#000] sm:shadow-[8px_8px_0px_0px_#000] hover:bg-black hover:text-white transition-colors text-black cursor-pointer block"
               >
                 {c.btnText}
               </a>
@@ -1120,7 +1120,7 @@ export function CharacterReveal() {
   return (
     <section className="bg-white py-48 border-b-8 border-black overflow-hidden text-black">
       <div className="container mx-auto px-6 max-w-6xl">
-        <p ref={textRef} className="text-[5vw] font-black uppercase leading-none tracking-tighter text-black">
+        <p ref={textRef} className="text-[6vw] sm:text-[5vw] font-black uppercase leading-none tracking-tighter text-black">
           "I AM A COMPUTER SCIENCE STUDENT PASSIONATE ABOUT SOFTWARE DEVELOPMENT, CLOUD COMPUTING, AND ARTIFICIAL INTELLIGENCE. I ENJOY LEARNING NEW TECHNOLOGIES AND APPLYING THEM."
         </p>
         <div className="mt-12 flex items-center gap-6">
@@ -1152,9 +1152,9 @@ export function TiltRecap() {
             <motion.div
               key={i}
               whileHover={{ scale: 1.1, rotateY: 10, rotateX: 10 }}
-              className={cn("w-64 h-64 border-4 border-black p-12 flex items-center justify-center text-center shadow-[12px_12px_0px_0px_#000] cursor-pointer", item.color)}
+              className={cn("w-36 h-36 sm:w-48 sm:h-48 md:w-64 md:h-64 border-3 sm:border-4 border-black p-6 sm:p-8 md:p-12 flex items-center justify-center text-center shadow-[6px_6px_0px_0px_#000] sm:shadow-[12px_12px_0px_0px_#000] cursor-pointer", item.color)}
             >
-              <h3 className={cn("text-4xl font-black uppercase", item.title === 'Vibrant' ? 'text-white' : 'text-black')}>{item.title}</h3>
+              <h3 className={cn("text-2xl sm:text-3xl md:text-4xl font-black uppercase", item.title === 'Vibrant' ? 'text-white' : 'text-black')}>{item.title}</h3>
             </motion.div>
           ))}
         </div>
@@ -1173,7 +1173,7 @@ export function Newsletter() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-4 justify-center">
           <a 
             href="mailto:enr.cse@gmail.com"
-            className="bg-[#FF4D00] text-black p-8 text-3xl font-black border-4 border-black shadow-[8px_8px_0px_0px_#000] hover:translate-y-2 hover:shadow-none transition-all uppercase whitespace-nowrap cursor-pointer inline-block"
+            className="bg-[#FF4D00] text-black p-4 sm:p-6 md:p-8 text-xl sm:text-2xl md:text-3xl font-black border-3 sm:border-4 border-black shadow-[4px_4px_0px_0px_#000] sm:shadow-[8px_8px_0px_0px_#000] hover:translate-y-2 hover:shadow-none transition-all uppercase whitespace-nowrap cursor-pointer inline-block"
           >
             Send Email
           </a>
