@@ -386,6 +386,13 @@ export function Hero({ onScrollToWork }: { onScrollToWork?: () => void }) {
 
         {/* Right Column: Interactive Lanyard */}
         <div className="w-full h-[40vh] md:h-[50vh] lg:h-[70vh] relative flex items-center justify-center border-4 border-black bg-white shadow-[12px_12px_0px_0px_#000] hover:shadow-none hover:translate-x-3 hover:translate-y-3 transition-all rounded-2xl overflow-hidden">
+          {/* Orange LPU Watermark */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-0">
+            <span className="text-[30vw] md:text-[22vw] lg:text-[18vw] font-black text-[#FF4D00] opacity-15 leading-none tracking-tighter uppercase select-none font-display">
+              LPU
+            </span>
+          </div>
+
           <div className="absolute top-4 left-4 z-20 flex gap-2">
             <div className="h-4 w-4 rounded-full bg-[#FF4D00] border-2 border-black" />
             <div className="h-4 w-4 rounded-full bg-[#CCFF00] border-2 border-black" />
