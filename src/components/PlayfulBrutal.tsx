@@ -397,8 +397,8 @@ export function Hero({ onScrollToWork }: { onScrollToWork?: () => void }) {
           <Lanyard
             position={[0, 0, 20]}
             gravity={[0, -40, 0]}
-            frontImage="/profile.jpeg"
-            backImage="/profile.jpeg"
+            frontImage="/profile.png"
+            backImage="/profile.png"
             imageFit="cover"
             lanyardWidth={1.5}
           />
